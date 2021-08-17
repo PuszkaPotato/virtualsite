@@ -26,11 +26,12 @@ class Forms extends BaseController
 		$validation =  \Config\Services::validation();
 		$email = \Config\Services::email();
 
-		$config['SMTPEncrypt'] 	= env('email.noreply.encrypt');
-		$config['SMTPHost'] 	= env('email.noreply.host');
-		$config['SMTPPort'] 	= env('email.noreply.port');
-		$config['SMTPUser'] 	= env('email.noreply.user');
-		$config['SMTPPass'] 	= env('email.noreply.pass');
+		$config['SMTPCrypto'] 	= env('email.encrypt');
+		$config['protocol']     = env('email.protocol');
+		$config['SMTPHost'] 	= env('email.host');
+		$config['SMTPPort'] 	= env('email.port');
+		$config['SMTPUser'] 	= env('email.user');
+		$config['SMTPPass'] 	= env('email.pass');
 		$config['mailType']		= 'html';
 
 		$email->initialize($config);
@@ -66,27 +67,28 @@ class Forms extends BaseController
 
 
 			//Send mail to us
-			/*
-            $email->setFrom(env('email.noreply.mail'), 'VGE Sites - noreply');
-			$email->setReplyTo($this->request->getPost('email'), $this->request->getPost('name'));
+			
+            $email->setFrom(env('email.sender'), 'VGE Sites - noreply');
+			$email->setReplyTo($this->request->getPost('leaderEmail'), $this->request->getPost('leaderName'));
 			$email->setTo(env('email.contact'));
 
-			$email->setSubject('VGE Sites - ' . lang('Contact.mail.messageTitle') . ' - ' . $this->request->getPost('name'));
-			$email->setMessage(view('templates/emails/confirmation', $data));
+			$email->setSubject('VGE Sites - ' . 'Partnerstwo' . ' - ' . $this->request->getPost('teamName') . ' - ' . $this->request->getPost('leaderName'));
+			$email->setMessage(view('templates/emails/partner_request', $data));
 
-			$email->send();
+			$email->send(false);
+
+			$email->printDebugger();
 
 			//Send confirmation mail to user
-			$email->setFrom(env('email.noreply.mail'), 'VGE Sites - noreply');
+			/*$email->setFrom(env('email.sender'), 'VGE Sites - noreply');
 			$email->setReplyTo(env('email.contact'), 'VGE Sites - ' . lang('Contact.mail.messageTitle'));
 			$email->setTo($this->request->getPost('email'));
 
-			$email->setSubject('VGE Sites - ' . lang('Contact.mail.confirmationTitle'));
+			$email->setSubject('VGE Sites - ' . lang('Partnerstwo'));
 			$email->setMessage(view('templates/emails/contact', $data));
 
-			$email->send();
-            */
-
+			$email->send();*/
+			
 			if ($this->request->isAJAX())
 			{
 
@@ -108,6 +110,8 @@ class Forms extends BaseController
 				|| $validation->hasError('teamWebsite')) {
 
 			$errors = $validation->getErrors();
+
+			$privacypolicy = $this->request->getPost('privacyPolicy');
 
 			return json_encode(['status'=> 'invalid', 'csrf' => csrf_hash(), 'errors' => $errors]);
 		} else {

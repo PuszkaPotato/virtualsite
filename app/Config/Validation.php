@@ -89,23 +89,22 @@ class Validation
 		// 	]
 		// ],
 		'teamFacebook' => [
-			'rules' => 'valid_url',
+			'rules' => 'regex_match[/^https:\/\/www\.facebook\.(com|pl)\/[a-zA-z0-9+-.,_]+(\/|)$/]',
 			'errors' => [
-				'required' => 'Nie podano adresu do strony facebook drużyny!',
-				'valid_url' => 'Podano nieprawidłowy adres URL strony facebook drużyny'
+				'regex_match' => 'Podano nieprawidłowy adres URL strony facebook drużyny'
 			]
 		],
-		'teamWebsite' => [
-			'rules' => 'valid_url|permit_empty',
-			'errors' => [
-				'valid_url' => 'Podano nieprawidłowy adres URL strony drużyny'
-			]
-		],
-		// 'privacyPolicy' => [
-		// 	'rules' => 'required',
+		// 'teamWebsite' => [
+		// 	'rules' => 'valid_url',
 		// 	'errors' => [
-		// 		'required' => 'Musisz przeczytać i zaakceptować warunki przetwarzania danych oraz warunki współpracy!'
+		// 		'valid_url' => 'Podano nieprawidłowy adres URL strony drużyny'
 		// 	]
-		// ]
+		// ],
+		'privacyPolicy' => [
+			'rules' => 'equals[1]',
+			'errors' => [
+				'equals' => 'Musisz przeczytać i zaakceptować warunki przetwarzania danych oraz warunki współpracy!'
+			]
+		]
 	];
 }

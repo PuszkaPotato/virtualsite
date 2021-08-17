@@ -32,57 +32,83 @@
                   <div class="row mb-3 justify-content-center">
                     <div class="col-md-8">
                         <label for="leaderName" class="form-label">Nazwa Lidera</label>
-                        <input type="text" class="form-control" id="leaderName" placeholder="Nick lub imię Lidera Drużyny">
+                        <input type="text" class="form-control" id="leaderName" placeholder="Nick lub Imię Lidera Drużyny" aria-describedby="leaderNameHelp">
+                        <div id="leaderNameHelp" class="form-text">Imię Lidera Drużyny lub jego nazwa użytkownika na naszym serwerze. 
+                          Jeśli Lider Drużyny nie był na naszym serwerze to prosimy o podanie nazwy użytkownika, którą Lider Drużyny zazwyczaj używa online.
+                          <br/>
+                          <span style="color:red;">Minimum 3 znaki oraz maksymalnie 32 znaki. Wymagane</span>
+                        </div>
                     </div>
                   </div>
                   <div class="row mb-3 justify-content-center">
                     <div class="col-md-8">
                         <label for="leaderUID" class="form-label">UID Lidera</label>
-                        <input type="text" class="form-control" id="leaderUID" placeholder="UID na Teamspeak 3 Lidera Drużyny">
+                        <input type="text" class="form-control" id="leaderUID" placeholder="UID na Teamspeak 3 Lidera Drużyny" aria-describedby="leaderUidHelp">
+                        <div id="leaderUidHelp" class="form-text">UID Lidera Drużyny. UID to unikalny identyfikator klienta na teamspeak 3. <span style="color:#EAA221;font-weight:bold;">Po wejściu nasz serwer otrzymujesz wiadomość od bota "Czasoumilacz", 
+                          w tej wiadomości znajduje się Twoje UID.</span> Jeśli masz problem ze znalezieniem swojego UID to zapraszamy do kontaktu z Administracją Serwera.
+                          </br>
+                          <span style="color:red;">Wymagane</span>
+                        </div>
                     </div>
                   </div>
                   <div class="row mb-3 justify-content-center">
                     <div class="col-md-8">
                         <label for="leaderEmail" class="form-label">Adres E-Mail Lidera</label>
-                        <input type="text" class="form-control" id="leaderEmail" placeholder="Adres e-mail lidera drużyny">
+                        <input type="text" class="form-control" id="leaderEmail" placeholder="Adres e-mail lidera drużyny" aria-describedby="leaderEmailHelp">
+                        <div id="leaderEmailHelp" class="form-text">Adres E-Mail Lidera Drużyny. Adres e-mail wykorzystujemy w celu informowania o zmianach w naszej ofercie lub w celu kontaktu z Liderem Drużyny jeśli inne formy kontaktu są nie możliwe.
+                          <span style="color:#EAA221;font-weight:bold;">Twój adres e-mail nie będzie wykorzystywany w celach marketingowych.</span>
+                          </br>
+                          <span style="color:red;">Wymagane</span>
+                        </div>
                     </div>
                   </div>
                   <div class="row mb-3 justify-content-center">
                     <div class="col-md-8">
                         <label for="teamName" class="form-label">Nazwa Drużyny</label>
-                        <input type="text" class="form-control" id="teamName" placeholder="Pełna Nazwa Drużyny">
+                        <input type="text" class="form-control" id="teamName" placeholder="Pełna Nazwa Drużyny" aria-describedby="teamNameHelp">
+                        <div id="teamNameHelp" class="form-text">Nazwa drużyny, którą zgłaszasz do partnerstwa.
+                          </br>
+                          <span style="color:red;">Minimum 3 znaki oraz maksymalnie 32 znaki. Wymagane</span>
+                        </div>
                     </div>
                   </div>
                   <div class="row mb-3 justify-content-center">
                     <div class="col-md-8">
                         <label for="teamTag" class="form-label">TAG Drużyny</label>
-                        <input type="text" class="form-control" id="teamTag" placeholder="TAG Drużyny">
+                        <input type="text" class="form-control" id="teamTag" placeholder="TAG Drużyny" aria-describedby="teamTagHelp">
+                        <div id="teamTagHelp" class="form-text">TAG, czyli inaczej skrót drużyny.
+                          </br>
+                          <span style="color:red;">Minimum 3 znaki oraz maksymalnie 16 znaków. Wymagane</span>  
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row mb-3 justify-content-center">
+                    <div class="col-md-8">
+                        <label for="teamFacebook" class="form-label">Strona Facebook Drużyny</label>
+                        <input type="text" class="form-control" id="teamFacebook" placeholder="Link do strony Facebook drużyny" aria-describedby="teamFacebookHelp">
+                        <div id="teamFacebookHelp" class="form-text">Strona Facebook Twojej drużyny. Poprawny format nie zawiera ID strony oraz dodatkowych parametrów jak panel administratora. 
+                          <br/></br><span style="color:#EAA221;font-weight:bold;">Przyklad: https://www.facebook.com/virtualgamingEU</span>
+                          </br></br>
+                          <span style="color:red;">Wymagane</span>
+                        </div>
                     </div>
                   </div>
                   <!-- <div class="row mb-3 justify-content-center">
                     <div class="col-md-8">
-                        <label for="teamLogo" class="form-label">Logo Drużyny</label>
-                        <input type="file" class="form-control" id="teamLogo">
+                        <label for="teamWebsite" class="form-label">Strona Drużyny</label>
+                        <input type="text" class="form-control" id="teamWebsite" placeholder="Link do strony oficjalnej strony drużyny" aria-describedby="teamWebsiteHelp">
+                        <div id="teamWebsiteHelp" class="form-text"></div
                     </div>
                   </div> -->
-                  <div class="row mb-3 justify-content-center">
-                    <div class="col-md-8">
-                        <label for="teamFacebook" class="form-label">Strona Facebook Drużyny</label>
-                        <input type="text" class="form-control" id="teamFacebook" placeholder="Link do strony Facebook drużyny">
-                    </div>
-                  </div>
-                  <div class="row mb-3 justify-content-center">
-                    <div class="col-md-8">
-                        <label for="teamWebsite" class="form-label">Strona Drużyny</label>
-                        <input type="text" class="form-control" id="teamWebsite" placeholder="Link do strony oficjalnej strony drużyny">
-                    </div>
-                  </div>
                   <div class="row mb-3 mt-5 justify-content-center">
                     <div class="col-md-8">
-                      <input class="form-check-input" id="privacypolicy" type="checkbox" value="">
+                      <input class="form-check-input" id="privacyPolicy" type="checkbox" value="" aria-describedby="privacyPolicyHelp">
                       <label class="form-check-label">
-                        Wyrażam zgodę na <a href="#">przetwarzanie danych</a> oraz <a href="#">warunki współpracy</a>
+                        Wyrażam zgodę na <a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">przetwarzanie danych</a> i akceptuję <a href="#">warunki współpracy</a>
                       </label>
+                      <div id="privacyPolicyHelp" class="form-text">
+                          <span style="color:red;">Wymagane</span>
+                        </div>
                     </div>
                   </div>
                   <div class="row mb-3 justify-content-center">
@@ -93,6 +119,30 @@
                 </form>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="privacyPolicyModal" tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacyPolicyModalLabel">Polityka Prywatności</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+        </div>
+        <div class="modal-body text-wrap">
+          Administratorem danych jest <span style="color:#EAA221;">Michał Kołodziej</span> (Może być dalej nazywany <span style="color:#EAA221;">Właścicielem Virtual-Gaming</span>).</br></br>
+
+          Dane prywatne podane formularzu, które zbieramy o Tobie to adres e-mail i opcjonalnie imię i nazwisko. 
+          Dostęp do Twoich danych ma Administracja Virtual-Gaming, do administracji zalicza się wszystkie osoby należące do zespołu Virtual-Gaming.</br></br>
+          Wykorzystujemy te dane wyłącznie w celu kontaktu z Tobą w przypadku aktualizacji naszej oferty, potrzeby kontaktu w związku z partnerstwem między Tobą, 
+          a Virtual-Gaming lub w celu poinformowania o aktualizacji naszej polityki prywatności.</br></br>
+          Twoje dane <span style="font-weight:bold;">nie</span> są dzielone z osobami trzecimi lub używane w celach marketingowych.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
         </div>
       </div>
     </div>
@@ -132,6 +182,13 @@
       <a href="<?= getEnv('app.baseURL') ?>"  target="_blank"> Virtual-Gaming</a>
     </div>
     <!-- Copyright -->
+
+
+<script>
+
+let siteUrl = "<?= getEnv('app.baseURL') ?>";
+
+</script>
 
   </footer>
   <!-- Footer -->
