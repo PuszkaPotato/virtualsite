@@ -33,8 +33,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
+$routes->get('partnerstwo', 'Pages::view/partners');
 $routes->get('/forms/(:any)', 'Forms::view/$1');
 $routes->get('/(:any)', 'Pages::view/$1');
+
 
 $routes->post('/forms/esport/submit', 'Forms::send');
 

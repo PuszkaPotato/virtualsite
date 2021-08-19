@@ -102,6 +102,7 @@
                         </p>
                             <a href="https://facebook.com/virtualgamingEU" target="_blank" class="btn btn-outline-primary btn-vge m-1">Przejdź na Facebook</a>
                             <a href="<?= getEnv('app.baseURL') ?>/partners" target="_blank" class="btn btn-outline-primary btn-vge m-1">Nasza Oferta</a>
+                            <a href="<?= getEnv('app.baseURL') ?>/forms/esport" target="_blank" class="btn btn-outline-primary btn-vge m-1">Wyślij Formularz</a>
                     </div>
                 </div>
             </div>

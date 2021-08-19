@@ -121,6 +121,7 @@
                   <p>Każde partnerstwo jest rozpatrywane indywidualnie i jesteśmy <b>otwarci</b> na wszelkie dodatkowe nowe potrzeby, pomysły i propozycje. Jeżeli więc masz ochotę - zapraszamy do nas, przebijemy wszystkie oferty!</p>
       
                 <a href="https://www.facebook.com/virtualgamingEU/" target="_blank" class="btn btn-outline-primary btn-vge m-1">Napisz do nas!</a>
+                <a href="<?= getEnv('app.baseURL') ?>/forms/esport" target="_blank" class="btn btn-outline-primary btn-vge m-1">Wyślij Formularz</a>
             </div>
           </div>
         </div>
