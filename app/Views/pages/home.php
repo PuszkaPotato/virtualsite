@@ -101,7 +101,7 @@
                             Dla drużyn esportowych jest też możliwość wysłania nam od razu zapytania o partnerstwo poprzez formularz <a href="<?= getEnv('app.baseURL') ?>/forms/esport">tutaj</a>
                         </p>
                             <a href="https://facebook.com/virtualgamingEU" target="_blank" class="btn btn-outline-primary btn-vge m-1">Przejdź na Facebook</a>
-                            <a href="<?= getEnv('app.baseURL') ?>/partners" target="_blank" class="btn btn-outline-primary btn-vge m-1">Nasza Oferta</a>
+                            <a href="<?= getEnv('app.baseURL') ?>/partnership" target="_blank" class="btn btn-outline-primary btn-vge m-1">Nasza Oferta</a>
                             <a href="<?= getEnv('app.baseURL') ?>/forms/esport" target="_blank" class="btn btn-outline-primary btn-vge m-1">Wyślij Formularz</a>
                     </div>
                 </div>
