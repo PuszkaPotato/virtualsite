@@ -23,6 +23,7 @@ $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
+$routes->setPrioritize();
 
 /*
  * --------------------------------------------------------------------
@@ -38,7 +39,10 @@ $routes->get('/images/view/(:any)', 'Images::view/$1');
 
 $routes->get('partnerstwo', 'Pages::view/partnership');
 $routes->get('/forms/(:any)', 'Forms::view/$1');
-$routes->get('/(:any)', 'Pages::view/$1');
+
+$routes->addRedirect('/regulamin', '/rules');
+
+$routes->get('/(:any)', 'Pages::view/$1', ['priority' => 1]);
 
 
 $routes->post('/forms/esport/submit', 'Forms::send');
