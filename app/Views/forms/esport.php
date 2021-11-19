@@ -45,7 +45,7 @@
                         <label for="leaderUID" class="form-label">UID Lidera</label>
                         <input type="text" class="form-control" id="leaderUID" placeholder="UID na Teamspeak 3 Lidera Drużyny" aria-describedby="leaderUidHelp">
                         <div id="leaderUidHelp" class="form-text">UID Lidera Drużyny. UID to unikalny identyfikator klienta na teamspeak 3. <span style="color:#EAA221;font-weight:bold;">Po wejściu nasz serwer otrzymujesz wiadomość od bota "Czasoumilacz", 
-                          w tej wiadomości znajduje się Twoje UID.</span> Jeśli masz problem ze znalezieniem swojego UID to zapraszamy do kontaktu z Administracją Serwera.
+                          w której znajduje się Twoje UID.</span> Jeśli masz problem ze znalezieniem swojego UID to zapraszamy do kontaktu z Administracją Serwera.
                           </br>
                           <span style="color:red;">Wymagane</span>
                         </div>
@@ -104,7 +104,7 @@
                     <div class="col-md-8">
                       <input class="form-check-input" id="privacyPolicy" type="checkbox" value="" aria-describedby="privacyPolicyHelp">
                       <label class="form-check-label">
-                        Wyrażam zgodę na <a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">przetwarzanie danych</a> i akceptuję <a href="#">warunki współpracy</a>
+                        Wyrażam zgodę na <a href="#" data-bs-toggle="modal" data-bs-target="#privacyPolicyModal">przetwarzanie danych</a> i akceptuję <a href="/partnership" target="_blank">warunki współpracy</a>
                       </label>
                       <div id="privacyPolicyHelp" class="form-text">
                           <span style="color:red;">Wymagane</span>
@@ -135,8 +135,8 @@
         <div class="modal-body text-wrap">
           Administratorem danych jest <span style="color:#EAA221;">Michał Kołodziej</span> (Może być dalej nazywany <span style="color:#EAA221;">Właścicielem Virtual-Gaming</span>).</br></br>
 
-          Dane prywatne podane formularzu, które zbieramy o Tobie to adres e-mail i opcjonalnie imię i nazwisko. 
-          Dostęp do Twoich danych ma Administracja Virtual-Gaming, do administracji zalicza się wszystkie osoby należące do zespołu Virtual-Gaming.</br></br>
+          Dane prywatne podane formularzu, które zbieramy o Tobie to adres e-mail oraz opcjonalnie imię i nazwisko. 
+          Dostęp do Twoich danych ma Właściciel Virtual-Gaming oraz upoważnione przez niego członkowie zespołu Virtual-Gaming.</br></br>
           Wykorzystujemy te dane wyłącznie w celu kontaktu z Tobą w przypadku aktualizacji naszej oferty, potrzeby kontaktu w związku z partnerstwem między Tobą, 
           a Virtual-Gaming lub w celu poinformowania o aktualizacji naszej polityki prywatności.</br></br>
           Twoje dane <span style="font-weight:bold;">nie</span> są dzielone z osobami trzecimi lub używane w celach marketingowych.

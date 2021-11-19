@@ -48,8 +48,10 @@
                             Nie będziemy was zanudzać chwaleniem się AntyDDOS czy automatyzacją, u nas to jest standard. 
                             Znajdziesz za to u nas różne autorskie pomysły, 
                             a jeśli już gdzieś je widziałeś, to komuś się u nas spodobało lub po prostu wpadł na podobny pomysł :).</br></br>
+
                             Wśród tych autorskich rozwiązań znajdziesz specjalnie zrobione dla Ciebie powitanie przez bota, porady seksualne od Zosi-Samosi, 
-                            darmowe boty muzyczne do wypożyczenia oraz w pełni autorską i zautomatyzowaną Administrację.
+                            darmowe boty muzyczne do wypożyczenia, serwer <span style="color:#EAA221;font-weight:bold;">CS:GO</span> dla partnerów specjalnie skonfigurowany pod treningi i sparingi 
+                            oraz w pełni autorską i zautomatyzowaną Administrację.
                         </p>
                             <a href="ts3server://ts.virtual-gaming.eu" class="btn btn-outline-primary btn-vge m-1">Przejdź na Serwer</a>
                     </div>
@@ -66,7 +68,7 @@
                             </br></br>
 
                             Raczej nie musimy wyjaśniać czym jest komunikator Teamspeak 3. 
-                            Nasz serwer działa już od ponad 1000 dni online, więc korzystając z naszego serwera masz pewność, 
+                            Nasz serwer działa już od ponad <span style="color:#EAA221;font-weight:bold;">1400 dni online</span>, więc korzystając z naszego serwera masz pewność, 
                             że nagle nie znikniemy. Po takim czasie pracy nad serwerem 
                             wiemy już co I jak oraz najważniejsze wiemy, gdzie nocą tupta jeż.</br></br>
                             Dokładnie wiemy jakie jedzenie trzeba dać chomikom żeby serwer działał bez zakłóceń, 

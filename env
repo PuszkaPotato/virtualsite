@@ -52,7 +52,7 @@
  #email.sender = noreply@example.eu
 
  #An e-mail that should be user as a contact
- email.contact = contact@example.eu
+ #email.contact = contact@example.eu
 
  #SMTP server SSL/TLS port
  #email.port = 465

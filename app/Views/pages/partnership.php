@@ -37,7 +37,7 @@
                       Haracze, wymuszenia, widykacja trudnych długów, okupy*
                     </li>
                     <li>
-                      Posiadamy publiczny serwer Teamspeak 3, który działa już ponad 3 lata, ponad 200 tysięcy wizyt i co najważniejsze Czasoumilacz, który nie może się doczekać każdego dnia na to kiedy przyjdziesz.
+                      Posiadamy publiczny serwer Teamspeak 3, który działa już ponad 4 lata, ponad 400 tysięcy wizyt i co najważniejsze Czasoumilacz, który nie może się doczekać każdego dnia na to kiedy przyjdziesz.
                     </li>
                     <li>
                       Serwer w 100% <b>legalny</b> (oryginalna licencja Gamer, boty administracyjne i muzyczne oraz cały design i skrypty), więc tym bardziej nie trzeba się martwić, że ktoś nas zniknie :-)
@@ -51,13 +51,13 @@
 
                   <ul>
                     <li>
-                      <b>Aktywnego</b> korzystania z naszego serwera TS3 (dooh!)
+                      <b>Aktywnego</b> korzystania z naszego serwera TS3 (dooh!) lub dołączenia na nasz serwer Discord
                     </li>
                     <li>
                       <b>Poważnego</b> podejścia do współpracy i przestrzegania zasad
                     </li>
                     <li>
-                      <b>Przestrzegania</b> Regulaminu naszego serwera
+                      <b>Przestrzegania</b> Regulaminu naszych serwerów
                     </li>
                     <li>
                       <b>Reklamowania</b> nas na swoich mediach społecznościowych (logo, posty)
@@ -85,13 +85,16 @@
                       Wydzieloną <b>prywatną</b> strefę w odpowiednim dziale na naszym serwerze
                     </li>
                     <li>
+                      Serwer <b>CS:GO</b> specjalnie przygotowany na treningi i sparingi
+                    </li>
+                    <li>
                       Ranga VIP dla Lidera/Liderów
                     </li>
                     <li>
                       Własną grupę serwerową, ikonkę, nazwę oraz prefix
                     </li>
                     <li>
-                      Współdzielony <b>bot muzyczny (Muzodajnia)</b>
+                      Współdzielone <b>boty muzyczne (Muzodajnia)</b>
                     </li>
                     <li>
                       Automatyczne nadawanie waszej grupy na kanale w strefie
