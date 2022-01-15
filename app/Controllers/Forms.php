@@ -139,7 +139,7 @@ class Forms extends BaseController
 				'faceit' => json_decode($this->request->getPost('teamPlayersFaceit'))
 			];
 
-			if(count($listOfPlayers['players']) > 6 || count($listOfPlayers['players']) != count($listOfPlayers['steam']) 
+			if(count($listOfPlayers['players']) > 7 || count($listOfPlayers['players']) != count($listOfPlayers['steam']) 
 				&& count($listOfPlayers['players']) != count($listOfPlayers['steam']))
 			{
 				$errors = $validation->getErrors();
