@@ -91,9 +91,6 @@ $('#submitForm').click(function(e) {
         },
         error: function (xhr, ajaxOptions, thrownError) {
             // Display in console error sent by server, should be disabled in production
-            console.log(xhr.status);
-            console.log(ajaxOptions);
-            console.log(thrownError);
 
             // Show that an error on server side has occurred
             $("#submitForm").before("<p class='formResponse alert alert-danger' style='color:red;'>An unknown error has occurred! Please try again later.</p>");

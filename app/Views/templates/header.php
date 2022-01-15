@@ -15,6 +15,8 @@
     
     <script src="https://kit.fontawesome.com/c23f620e01.js" crossorigin="anonymous"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/theme/theme.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/theme/img/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/theme/img/favicons/favicon-32x32.png">

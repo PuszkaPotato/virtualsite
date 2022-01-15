@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Models\EsportFormModel;
+use App\Models\TournamentModel;
 use CodeIgniter\Controller;
 
 class Forms extends BaseController
@@ -120,4 +121,97 @@ class Forms extends BaseController
 			return json_encode(['status'=> 'failure', 'csrf' => csrf_hash(), 'message' => $message]);
 		}
     }
+
+	public function tournament()
+	{
+		$model = new TournamentModel();
+		$validation = \Config\Services::validation();
+
+		if ($this->request->getMethod() === 'post' && $this->validate('tournamentErrors'))
+		{
+			//Save POST data to an array
+			$data = $this->request->getPost();
+
+			//Check number of players and make sure profiles match number of players
+			$listOfPlayers = [
+				'players' => json_decode($this->request->getPost('teamPlayers')),
+				'steam' => json_decode($this->request->getPost('teamPlayersSteam')),
+				'faceit' => json_decode($this->request->getPost('teamPlayersFaceit'))
+			];
+
+			if(count($listOfPlayers['players']) > 6 || count($listOfPlayers['players']) != count($listOfPlayers['steam']) 
+				&& count($listOfPlayers['players']) != count($listOfPlayers['steam']))
+			{
+				$errors = $validation->getErrors();
+
+				$errors['teamPlayers'] = 'Ilość graczy i profili sie nie zgadzają! Maksymalna ilość graczy to 6!';
+				$errors['teamPlayersSteam'] = 'Ilość graczy i profili sie nie zgadzają! Maksymalna ilość graczy to 6!';
+				$errors['teamPlayersFaceit'] = 'Ilość graczy i profili sie nie zgadzają! Maksymalna ilość graczy to 6!';
+
+				$message = $data['teamPlayers'];
+				//Send errors
+				return json_encode(['status' => 'invalid', 'csrf' => csrf_hash(), 'message' => $message, 'errors' => $errors]);
+			}
+
+			$img = $this->request->getFile('teamLogo');
+
+			//Save file with team name as file name
+			if($img->isValid() && !$img->hasMoved())
+			{
+				$newName = $this->request->getPost('teamName');
+				$newName = str_replace('-', '', $newName);
+				$newName = str_replace(' ', '', $newName);
+				$imgName = strtolower($newName);
+
+				$img->move(ROOTPATH . 'public/uploads/teams', $imgName . '.png');
+			}
+
+			$data['teamLogo'] = $imgName . '.png';
+
+			//Create array with player information for JSON Object
+			$playerArr = [];
+
+			for($i = 0; $i < count($listOfPlayers['players']); $i++)
+			{
+				$playerArr[$listOfPlayers['steam'][$i]] = $listOfPlayers['players'][$i];
+			}
+
+			$playerArr[$data['teamCoachSteam']] = $data['teamCoach'];
+
+			//Create team JSON object for use in get5 sourcemod plugin
+			$teamArr = array(
+				'name' => $data['teamName'],
+				'flag' => 'pl',
+				'logo' => $imgName,
+				'players' => array(
+					$playerArr
+				)
+			);
+
+			$data['teamJSON'] = json_encode($teamArr);
+
+			//Save data to database
+			$model->insert($data);
+
+			if($this->request->isAjax())
+			{
+				$message = "Zgłoszenie zostało pomyślnie wysłane! Będziemy dalej kontaktować się poprzez Facebook!";
+
+				return json_encode(['status' => 'success', 'csrf' => csrf_hash(), 'message' => $message]);
+			}
+		} else if($validation->getErrors())
+		{
+
+			$errors = $validation->getErrors();
+
+			$message = "Wykryto błędy w formularzu, musisz je poprawić, aby kontynuować!";
+			//Send errors
+			return json_encode(['status' => 'invalid', 'csrf' => csrf_hash(), 'message' => $message, 'errors' => $errors]);
+		} else {
+			
+			$message = "Wystąpił nieznany błąd! Skontaktuj się z organizatorem turnieju!";
+
+			return json_encode(['status' => 'failure', 'csrf' => csrf_hash(), 'message' => $message]);
+		}
+	}
 }

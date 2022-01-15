@@ -46,6 +46,7 @@ $routes->get('/(:any)', 'Pages::view/$1', ['priority' => 1]);
 
 
 $routes->post('/forms/esport/submit', 'Forms::send');
+$routes->post('/forms/tournament/submit', 'Forms::tournament');
 
 
 /*

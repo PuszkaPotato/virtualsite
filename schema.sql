@@ -1,9 +1,3 @@
--- MySQL dump 10.19  Distrib 10.3.30-MariaDB, for debian-linux-gnu (x86_64)
---
--- Host: localhost    Database: vge
--- ------------------------------------------------------
--- Server version	10.3.30-MariaDB-1:10.3.30+maria~focal-log
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -18,11 +12,9 @@
 --
 -- Table structure for table `forms_esport`
 --
-
-DROP TABLE IF EXISTS `forms_esport`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `forms_esport` (
+CREATE TABLE IF NOT EXISTS `forms_esport` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `leader_name` varchar(255) CHARACTER SET latin1 NOT NULL,
   `leader_email` varchar(255) NOT NULL,
@@ -37,7 +29,32 @@ CREATE TABLE `forms_esport` (
   `deleted_at` datetime DEFAULT NULL,
   `status` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `forms_tournament`
+--
+
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE IF NOT EXISTS `forms_tournament` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `teamName` varchar(255) DEFAULT NULL,
+  `teamTag` varchar(45) DEFAULT NULL,
+  `teamFacebook` varchar(255) DEFAULT NULL,
+  `teamLogo` varchar(255) DEFAULT NULL,
+  `teamCoach` varchar(255) DEFAULT NULL,
+  `teamCoachSteam` varchar(255) DEFAULT NULL,
+  `teamPlayers` longtext DEFAULT NULL,
+  `teamPlayersSteam` longtext DEFAULT NULL,
+  `teamPlayersFaceit` longtext DEFAULT NULL,
+  `teamJSON` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +66,4 @@ CREATE TABLE `forms_esport` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-13  8:52:39
+-- Dump completed on 2022-01-15 12:52:59
