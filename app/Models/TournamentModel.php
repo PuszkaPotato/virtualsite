@@ -9,7 +9,7 @@ class TournamentModel extends Model
     }
     protected $table = 'forms_tournament';
 
-    protected $allowedFields = ['teamName', 'teamTag', 'teamFacebook', 'teamLogo', 'teamCoach', 'teamCoachSteam', 'teamPlayers', 'teamPlayersSteam', 'teamPlayersFaceit', 'teamJSON'];
+    protected $allowedFields = ['teamName', 'teamTag', 'teamFacebook', 'teamLeader', 'teamLogo', 'teamCoach', 'teamCoachSteam', 'teamPlayers', 'teamPlayersSteam', 'teamPlayersFaceit', 'teamJSON'];
 
     protected $useTimestamps = true;
     protected $createdField = 'created_at';

@@ -44,6 +44,14 @@
                   <input type="text" id="teamFacebook" class="form-control form-control-sm" name="teamFacebook" aria-describedby="teamFacebookHelp" >
                   <div id="teamFacebookHelp" class="form-text">Podaj stronę Facebook swojej drużyny.</div>
                   <br/>
+                </div>
+                <div class="form-group">
+                  <br/>
+                  <label for="teamLeader">Kontakt Facebook Lidera</label>
+                  <input type="text" id="teamLeader" class="form-control form-control-sm" name="teamLeader" aria-describedby="teamLeaderHelp" >
+                  <div id="teamLeaderHelp" class="form-text">Podaj adres do profilu Facebook lidera w celu kontaktu.</div>
+                </div>
+                <div class="form-group">
                   <label for="teamLogo">Logo Drużyny</label>
                   <input type="file" id="teamLogo" class="form-control form-control-sm" name="teamLogo" aria-describedby="teamLogoHelp" >
                   <div id="teamLogoHelp" class="form-text">Wyślij Logo swojej drużyny.</div>

@@ -130,7 +130,14 @@ class Validation
 		'teamFacebook' => [
 			'rules' => 'regex_match[/^https:\/\/(www\.|)facebook\.(com|pl)\/[a-zA-z0-9+-.,_]+(\/|)$/]',
 			'errors' => [
-				'regex_match' => 'Podano nieprawidłowy adres URL strony facebook drużyny'
+				'regex_match' => 'Podano nieprawidłowy adres URL strony Facebook drużyny'
+			]
+		],
+
+		'teamLeader' => [
+			'rules' => 'regex_match[/^https:\/\/(www\.|)facebook\.(com|pl)\/[a-zA-z0-9+-.,_?=]+(\/|)$/]',
+			'errors' => [
+				'regex_match' => 'Podano nieprawidłowy adres URL profilu Facebook'
 			]
 		],
 
