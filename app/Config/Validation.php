@@ -135,7 +135,7 @@ class Validation
 		],
 
 		'teamLeader' => [
-			'rules' => 'regex_match[/^https:\/\/(www\.|)facebook\.(com|pl)\/[a-zA-z0-9+-.,_?=]+(\/|)$/]',
+			'rules' => 'regex_match[/^https:\/\/(www\.|)facebook\.(com|pl)\/[a-zA-z0-9+-.,_?=]+(\/|)$/]|permit_empty',
 			'errors' => [
 				'regex_match' => 'Podano nieprawidłowy adres URL profilu Facebook'
 			]
