@@ -30,19 +30,19 @@
                   <br/>
                   <label for="teamName">Nazwa Drużyny</label>
                   <input type="text" id="teamName" class="form-control form-control-sm" name="teamName" aria-describedby="teamNameHelp" >
-                  <div id="teamNameHelp" class="form-text">Podaj pełną nazwę swojej drużyny.</div> 
+                  <div id="teamNameHelp" class="form-text">Podaj pełną nazwę swojej drużyny. <br/> <span class="text-danger">* To pole jest wymagane</span></div> 
                 </div>
                 <div class="form-group">
                   <br/>
                   <label for="teamTag">TAG Drużyny</label>
                   <input type="text" id="teamTag" class="form-control form-control-sm" name="teamTag" aria-describedby="teamTagHelp" >
-                  <div id="teamTagHelp" class="form-text">Podaj TAG swojej drużyny.</div>  
+                  <div id="teamTagHelp" class="form-text">Podaj TAG swojej drużyny. <br/> <span class="text-danger">* To pole jest wymagane</span></div>  
                 </div>
                 <div class="form-group">
                   <br/>
                   <label for="teamFacebook">Facebook Drużyny</label>
                   <input type="text" id="teamFacebook" class="form-control form-control-sm" name="teamFacebook" aria-describedby="teamFacebookHelp" >
-                  <div id="teamFacebookHelp" class="form-text">Podaj stronę Facebook swojej drużyny.</div>
+                  <div id="teamFacebookHelp" class="form-text">Podaj stronę Facebook swojej drużyny. <br/> <span class="text-danger">* To pole jest wymagane</span></div>
                   <br/>
                 </div>
                 <div class="form-group">
@@ -52,9 +52,10 @@
                   <div id="teamLeaderHelp" class="form-text">Podaj adres do profilu Facebook lidera w celu kontaktu.</div>
                 </div>
                 <div class="form-group">
+                  <br/>
                   <label for="teamLogo">Logo Drużyny</label>
                   <input type="file" id="teamLogo" class="form-control form-control-sm" name="teamLogo" aria-describedby="teamLogoHelp" >
-                  <div id="teamLogoHelp" class="form-text">Wyślij Logo swojej drużyny.</div>
+                  <div id="teamLogoHelp" class="form-text">Wyślij Logo swojej drużyny.  <br/> <span class="text-danger">* To pole jest wymagane</span></div>
                 </div>
                 <br/>
                 <h4>Trener</h4>
@@ -76,19 +77,19 @@
                   <div class="form-group">
                   <label for="teamPlayers">Nick Graczy w Grze</label>
                   <textarea id="teamPlayers" class="form-control form-control-sm" name="teamPlayers" aria-describedby="teamPlayersHelp" rows="6" ></textarea>
-                  <div id="teamPlayersHelp" class="form-text">Podaj nick każdego gracza, każdy gracz musi znajdować się w nowej linijcie.</div>
+                  <div id="teamPlayersHelp" class="form-text">Podaj nick każdego gracza, każdy gracz musi znajdować się w nowej linijcie.  <br/> <span class="text-danger">* To pole jest wymagane, maksymalna ilość graczy to 7</span></div>
                 </div>
                 <br/>
                 <div class="form-group">
                   <label for="teamPlayersSteam">Profile Steam Graczy</label>
                   <textarea type="text" id="teamPlayersSteam" class="form-control form-control-sm" name="teamPlayersSteam" aria-describedby="teamPlayersSteamHelp" rows="6" ></textarea>
-                  <div id="teamPlayersSteamHelp" class="form-text">Podaj profil Steam każdego gracza, każdy gracz musi znajdować się w nowej linijcie.</div>
+                  <div id="teamPlayersSteamHelp" class="form-text">Podaj profil Steam każdego gracza, każdy gracz musi znajdować się w nowej linijcie. <br/> <span class="text-danger">* To pole jest wymagane, maksymalna ilość graczy to 7</span></div>
                 </div>
                 <br/>
                 <div class="form-group">
                   <label for="teamPlayersFaceit">Profile FaceIt Graczy</label>
                   <textarea type="text" id="teamPlayersFaceit" class="form-control form-control-sm" name="teamPlayersFaceit" aria-describedby="teamPlayersFaceitHelp" rows="6"></textarea>
-                  <div id="teamPlayersFaceitHelp" class="form-text">Podaj profil FaceIt każdego gracza, każdy gracz musi znajdować się w nowej linijcie.</div>
+                  <div id="teamPlayersFaceitHelp" class="form-text">Podaj profil FaceIt każdego gracza, każdy gracz musi znajdować się w nowej linijcie. <br/> <span class="text-danger">* To pole jest wymagane, maksymalna ilość graczy to 7</span></div>
                 </div>
                 <div id="otherErrors">
 
@@ -99,7 +100,9 @@
               </div>
             </form>
             <div id="successMessage" class="card-body text-success text-center h5 d-none">
-
+              <p></p>
+              <a href="ts3server://ts.virtual-gaming.eu"><button class="btn btn-outline-primary btn-vge m-1">Wejdź Na Serwer TS3 VGE!</button></a>
+              <a href="https://www.facebook.com/risingstarses" target="_blank" ><button class="btn btn-outline-primary btn-vge m-1">Masz Pytania? Pisz Tutaj!</button></a>
             </div>
           </div>
         </div>
@@ -186,8 +189,10 @@ $(function() {
 
     //Restore input helpers in case they were edited
     $('.form-text').each(function() {
-      $(this).children().remove();
-    })
+      $(this).children('.invalid-feedback').remove();
+    });
+
+    $('input, textarea').removeClass('is-invalid');
 
     //Clear #otherErrors
     $('#otherErrors').text('');
@@ -221,6 +226,7 @@ $(function() {
       {
         console.log(data);
         for(error in data.errors) {
+          $(`#${error}`).addClass('is-invalid');
           $(`#${error}Help`).append(`<div class='invalid-feedback d-block'>${data.errors[error]}</div>`);
         }
 
@@ -232,7 +238,7 @@ $(function() {
       } else if (data.status === 'success')
       {
         $('form').addClass('d-none');
-        $('#successMessage').removeClass('d-none').html(data.message);
+        $('#successMessage').removeClass('d-none').children('p').text(data.message);
       } else {
         //Re-enable button
         $('#submitTeam').attr('disabled', false);

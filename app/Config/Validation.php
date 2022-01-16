@@ -130,14 +130,14 @@ class Validation
 		'teamFacebook' => [
 			'rules' => 'regex_match[/^https:\/\/(www\.|)facebook\.(com|pl)\/[a-zA-z0-9+-.,_]+(\/|)$/]',
 			'errors' => [
-				'regex_match' => 'Podano nieprawidłowy adres URL strony Facebook drużyny'
+				'regex_match' => 'Podano nieprawidłowy adres URL strony Facebook drużyny!'
 			]
 		],
 
 		'teamLeader' => [
 			'rules' => 'regex_match[/^https:\/\/(www\.|)facebook\.(com|pl)\/[a-zA-z0-9+-.,_?=]+(\/|)$/]|permit_empty',
 			'errors' => [
-				'regex_match' => 'Podano nieprawidłowy adres URL profilu Facebook'
+				'regex_match' => 'Podano nieprawidłowy adres URL profilu Facebook!'
 			]
 		],
 
@@ -152,37 +152,39 @@ class Validation
 		],
 
 		'teamCoach' => [
-			'rules' => 'max_length[120]|permit_empty',
+			'rules' => 'max_length[120]|required_with[teamCoachSteam]|permit_empty',
 			'errors' => [
-				'max_length' => 'Nick Trenera nie moze być dłuższy niż 120 znaków'
+				'max_length' => 'Nick Trenera nie moze być dłuższy niż 120 znaków!',
+				'required_with' => 'Musisz podać nick Trenera lub wyczyścić pole z profilem Steam Trenera!'
 			]
 		],
 
 		'teamCoachSteam' => [
-			'rules' => 'regex_match[/^https:\/\/steamcommunity\.com\/(id|profiles)\/[a-zA-z0-9+-.,_]+(\/|)$/]|permit_empty',
+			'rules' => 'regex_match[/^https:\/\/steamcommunity\.com\/(id|profiles)\/[a-zA-z0-9+-.,_]+(\/|)$/]|required_with[teamCoach]|permit_empty',
 			'errors' => [
-				'regex_match' => 'Adres steam do profilu trenera jest nieprawdiłowy'
+				'regex_match' => 'Adres Steam do profilu trenera jest nieprawdiłowy!',
+				'required_with' => 'Musisz podać adres do profilu Steam Trenera lub wyczyścić pole z nickiem Trenera!'
 			]
 		],
 
 		'teamPlayers' => [
 			'rules' => 'required',
 			'errors' => [
-				'required' => 'Musisz podać nicki wszystkich graczy'
+				'required' => 'Musisz podać nicki wszystkich graczy!'
 			]
 		],
 
 		'teamPlayersSteam' => [
 			'rules' => 'required',
 			'errors' => [
-				'required' => 'Musisz podać adresy profili Steam wszystkich graczy'
+				'required' => 'Musisz podać adresy profili Steam wszystkich graczy!'
 			]
 		],
 
 		'teamPlayersFaceit' => [
 			'rules' => 'required',
 			'errors' => [
-				'required' => 'Musisz podać adresy profili FaceIt wszystkich graczy'
+				'required' => 'Musisz podać adresy profili FaceIt wszystkich graczy!'
 			]
 			],
 	];

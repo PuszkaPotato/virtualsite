@@ -144,11 +144,11 @@ class Forms extends BaseController
 			{
 				$errors = $validation->getErrors();
 
-				$errors['teamPlayers'] = 'Ilość graczy i profili sie nie zgadzają! Maksymalna ilość graczy to 6!';
-				$errors['teamPlayersSteam'] = 'Ilość graczy i profili sie nie zgadzają! Maksymalna ilość graczy to 6!';
-				$errors['teamPlayersFaceit'] = 'Ilość graczy i profili sie nie zgadzają! Maksymalna ilość graczy to 6!';
+				$errors['teamPlayers'] = 'Ilość graczy i profili sie nie zgadzają! Maksymalna ilość graczy to 7!';
+				$errors['teamPlayersSteam'] = 'Ilość graczy i profili sie nie zgadzają! Maksymalna ilość graczy to 7!';
+				$errors['teamPlayersFaceit'] = 'Ilość graczy i profili sie nie zgadzają! Maksymalna ilość graczy to 7!';
 
-				$message = $data['teamPlayers'];
+				$message = "Wykryto błędy w formularzu, musisz je poprawić, aby kontynuować!";
 				//Send errors
 				return json_encode(['status' => 'invalid', 'csrf' => csrf_hash(), 'message' => $message, 'errors' => $errors]);
 			}
