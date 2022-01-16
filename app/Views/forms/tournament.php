@@ -96,6 +96,7 @@
                 </div>
               </div>
               <div class="card-footer">
+                <div class="h-captcha" data-sitekey="dc46a8d8-a715-4550-b7d7-bfb3aa673821"></div>
                 <button id="submitTeam" class="btn btn-success">Wyślij Zgłoszenie</button>
               </div>
             </form>
@@ -186,6 +187,13 @@ function pushPlayersToFormData(field, players) {
 $(function() {
   $('form').submit(function(event) {
     event.preventDefault();
+
+    //Check hCaptcha first
+    var hcaptchaVal = $('[name=h-captcha-response]').val();
+    if (hcaptchaVal === "") {
+      $('#otherErrors').addClass('invalid-feedback d-block').text('Musisz wypełnić Captcha przed wysłaniem formularza!');
+      return;
+    }
 
     //Restore input helpers in case they were edited
     $('.form-text').each(function() {

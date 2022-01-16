@@ -132,6 +132,28 @@ class Forms extends BaseController
 			//Save POST data to an array
 			$data = $this->request->getPost();
 
+			$hCaptcha = array(
+				'secret' => env('security.hCaptcha.secret'),
+				'response' => $data['h-captcha-response']
+			);
+
+			$hVerify = curl_init();
+				curl_setopt($hVerify, CURLOPT_URL, "https://hcaptcha.com/siteverify");
+				curl_setopt($hVerify, CURLOPT_POST, true);
+				curl_setopt($hVerify, CURLOPT_POSTFIELDS, http_build_query($hCaptcha));
+				curl_setopt($hVerify, CURLOPT_RETURNTRANSFER, true);
+			$hResponse = curl_exec($hVerify);
+
+			$hResponseData = json_decode($hResponse);
+
+			if(!$hResponseData->success) {
+				$message = "Wykryto błąd w Captcha, odśwież stronę i spróbuj ponownie!";
+				
+				$errors = $hResponseData;
+
+				return json_encode(['status' => 'invalid', 'csrf' => csrf_hash(), 'message' => $message, 'errors' => $errors]);
+			}
+
 			//Check number of players and make sure profiles match number of players
 			$listOfPlayers = [
 				'players' => json_decode($this->request->getPost('teamPlayers')),
