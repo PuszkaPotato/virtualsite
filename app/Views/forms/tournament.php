@@ -42,7 +42,7 @@
                   <br/>
                   <label for="teamFacebook">Facebook Drużyny</label>
                   <input type="text" id="teamFacebook" class="form-control form-control-sm" name="teamFacebook" aria-describedby="teamFacebookHelp" >
-                  <div id="teamFacebookHelp" class="form-text">Podaj stronę Facebook swojej drużyny. <br/> <span class="text-danger">* To pole jest wymagane</span></div>
+                  <div id="teamFacebookHelp" class="form-text">Podaj stronę Facebook swojej drużyny.</div>
                   <br/>
                 </div>
                 <div class="form-group">

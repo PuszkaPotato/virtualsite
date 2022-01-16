@@ -128,7 +128,7 @@ class Validation
 		],
 
 		'teamFacebook' => [
-			'rules' => 'regex_match[/^https:\/\/(www\.|)facebook\.(com|pl)\/[a-zA-z0-9+-.,_]+(\/|)$/]',
+			'rules' => 'regex_match[/^https:\/\/(www\.|)facebook\.(com|pl)\/[a-zA-z0-9+-.,_]+(\/|)$/]|permit_empty',
 			'errors' => [
 				'regex_match' => 'Podano nieprawidłowy adres URL strony Facebook drużyny!'
 			]
@@ -142,10 +142,10 @@ class Validation
 		],
 
 		'teamLogo' => [
-			'rules' => 'uploaded[teamLogo]|mime_in[teamLogo,image/png]|max_size[teamLogo,2000]|max_dims[teamLogo,2048,2048]',
+			'rules' => 'uploaded[teamLogo]|mime_in[teamLogo,image/png,image/jpeg,image/jpg,image/gif]|max_size[teamLogo,2000]|max_dims[teamLogo,2048,2048]',
 			'errors' => [
 				'uploaded' => 'Musisz wysłać logo drużyny!',
-				'mime_in' => 'Logo musi być w formacie PNG!',
+				'mime_in' => 'Logo musi być w formacie PNG lub JPEG!',
 				'max_size' => 'Wysłany plik jest zbyt duży, dozwolona wielkość to 2MB!',
 				'max_dims' => 'Wysłany plik ma zbyt duże rozmiary, dozwolone rozmiary to 2048x2048!'
 			]
