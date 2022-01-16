@@ -96,7 +96,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <div class="h-captcha" data-sitekey="dc46a8d8-a715-4550-b7d7-bfb3aa673821"></div>
+                <div class="h-captcha" data-sitekey="<?= getEnv('security.hCaptcha.sitekey') ?>"></div>
                 <button id="submitTeam" class="btn btn-success">Wyślij Zgłoszenie</button>
               </div>
             </form>

@@ -148,6 +148,7 @@
 # hCaptcha
 
   security.hCaptcha.secret = ''
+  security.hCaptcha.sitekey = ''
 
 #--------------------------------------------------------------------
 # LOGGER
