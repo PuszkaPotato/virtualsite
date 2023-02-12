@@ -137,7 +137,7 @@
       <div class="text-center">
         <ul class="list-group justify-content-center list-group-horizontal">
           <li class="list-group-item social-email">
-            <a href="mailto:kontakt@virtual-gaming.eu"><i class="fas fa-envelope" style="font-size: 2em;"></i>
+            <a href="mailto:<?= getEnv('email.contact') ?>"><i class="fas fa-envelope" style="font-size: 2em;"></i>
               <p>E-Mail</p>
             </a>
           </li>

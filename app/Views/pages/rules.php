@@ -178,7 +178,7 @@
                       <span>Administracja Serwera może ukarać użytkownika korzystając z zasad przedstawionych na serwerze TS w opisie kanału </span><span class="channel-name"><span class="ipsEmoji">🔀</span> <span class="vge-text-important">"Kodeks Karny VGE"</span>.</span>
                     </li>
                     <li>
-                      <span>Jeśli ukarany użytkownik uważa, że został zbyt surowo lub bezpodstawnie ukarany to może napisać odwołanie na e-mail <span class="vge-link"><a href="mailto://kontakt@virtual-gaming.eu" rel="">kontakt@virtual-gaming.eu</a></span>. Podając swoje uuid, nazwę na serwerze, powód oraz nazwę administratora, ktory nałożył karę.</span>
+                      <span>Jeśli ukarany użytkownik uważa, że został zbyt surowo lub bezpodstawnie ukarany to może napisać odwołanie na e-mail <span class="vge-link"><a href="mailto:<?= getEnv('email.contact') ?>" rel=""><?= getEnv('email.contact') ?></a></span>. Podając swoje uuid, nazwę na serwerze, powód oraz nazwę administratora, ktory nałożył karę.</span>
                     </li>
                     <li>
                       <span>Jeśli użytkownik chce zgłosić skargę na innego użytkownika lub członka Administracji Serwera to może to zrobić kontaktując się z Administracją Serwera.</span>
@@ -241,7 +241,7 @@
       <div class="text-center">
         <ul class="list-group justify-content-center list-group-horizontal">
           <li class="list-group-item social-email">
-            <a href="mailto:kontakt@virtual-gaming.eu"><i class="fas fa-envelope" style="font-size: 2em;"></i>
+            <a href="mailto:<?= getEnv('email.contact') ?>"><i class="fas fa-envelope" style="font-size: 2em;"></i>
               <p>E-Mail</p>
             </a>
           </li>

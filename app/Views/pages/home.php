@@ -93,7 +93,7 @@
                             powinny zacząć od napisania, czym się zajmują i czego oczekują od współpracy z nami. 
                             Oferty współpracy przyjmujemy na naszej stronie
                             <span class="vge-link"><a href="https://facebook.com/virtualgamingEU" target="_blank">Facebook</a></span> 
-                            lub na nasz e-mail <span class="vge-link"><a href="mailto:kontakt@virtual-gaming.eu">kontakt@virtual-gaming.eu</a></span><br><br>
+                            lub na nasz e-mail <span class="vge-link"><a href="mailto:<?= getEnv('email.contact') ?>"><?= getEnv('email.contact') ?></a></span><br><br>
                             Jeśli prezentujesz drużynę esportową to mamy gotową ofertę 
                             <span class="vge-link"><<?= getEnv('app.baseURL') ?>/partners" target="_blank>">tutaj</a></span>. 
                             Jeżeli oferta się podoba, 
@@ -118,7 +118,7 @@
         <div class="text-center">
             <ul class="list-group justify-content-center list-group-horizontal">
                 <li class="list-group-item social-email">
-                    <a href="mailto:kontakt@virtual-gaming.eu"><i class="fas fa-envelope" style="font-size: 2em;"></i>
+                    <a href="mailto:<?= getEnv('email.contact') ?>"><i class="fas fa-envelope" style="font-size: 2em;"></i>
                         <p>E-Mail</p>
                     </a>
                 </li>
